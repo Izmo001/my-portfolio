@@ -110,8 +110,11 @@ export default function App() {
               <a href="#projects" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg shadow-blue-200">
                 View My Work <ArrowRight size={18} />
               </a>
-              <a href="https://github.com/lzmo001" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 px-8 py-4 rounded-full font-medium transition-all">
+              <a href="https://github.com/Izmo001" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 px-8 py-4 rounded-full font-medium transition-all">
                 <Code2 size={18} /> GitHub
+              </a>
+              <a href="https://gotech.co.ke" target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 px-8 py-4 rounded-full font-medium transition-all">
+                <ExternalLink size={18} /> Live Project
               </a>
             </div>
             <div className="flex flex-wrap gap-6 pt-6 text-sm text-gray-500">
@@ -303,9 +306,15 @@ export default function App() {
             Say Hello
           </a>
           <div className="flex justify-center gap-6 mb-8 text-gray-400">
-            <a href="https://github.com/lzmo001" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><Terminal size={24} /></a>
-            <a href="mailto:mutindadavid682@gmail.com" className="hover:text-white transition-colors"><Mail size={24} /></a>
-            <a href="#" className="hover:text-white transition-colors"><MapPin size={24} /></a>
+            <a href="https://github.com/Izmo001" target="_blank" rel="noreferrer" className="hover:text-white transition-colors" aria-label="GitHub">
+              <Terminal size={24} />
+            </a>
+            <a href="mailto:mutindadavid682@gmail.com" className="hover:text-white transition-colors" aria-label="Email">
+              <Mail size={24} />
+            </a>
+            <a href="https://gotech.co.ke" target="_blank" rel="noreferrer" className="hover:text-white transition-colors" aria-label="GoTech live site">
+              <ExternalLink size={24} />
+            </a>
           </div>
           <p className="text-sm text-gray-500">© {new Date().getFullYear()} David Momanyi Isaya. Built with React & Tailwind CSS.</p>
         </div>
