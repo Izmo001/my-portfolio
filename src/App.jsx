@@ -13,7 +13,7 @@ const skillsData = {
   "Data & AI Tooling": ["ChromaDB", "pgvector", "PostgreSQL", "SQL Server", "MongoDB", "SQL", "Pandas", "TensorFlow", "MLflow", "Power BI"],
   "Engineering & Delivery": ["Git/GitHub", "Maven", "Docker/Compose", "Kubernetes", "CI/CD", "Azure", "FastAPI", "Streamlit", "LangGraph", "Linux"],
   "Security & Infrastructure": ["OAuth2", "RBAC", "OWASP", "NIST", "TLS", "VPNs", "pfSense", "VLANs", "TCP/IP", "Wireshark", "Nmap"],
-  "IT Operations & Enterprise": ["Help desk", "User support", "Software installation", "Account administration", "Server health monitoring", "Backups", "OPERA PMS", "MC", "MICROS/POS", "Onity", "SunSystems", "Z-Fiscal", "PBX", "Conference AV"]
+  "IT Support & Hotel Systems": ["OPERA PMS", "MC", "MICROS/POS", "Onity", "SunSystems", "Z-Fiscal", "PBX", "Digital Signage", "Conference AV", "Help desk", "User support", "Software installation", "Server health monitoring", "Backups"]
 };
 
 const projectsData = [
