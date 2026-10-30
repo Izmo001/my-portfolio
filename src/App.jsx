@@ -3,16 +3,17 @@ import {
   Mail, Phone, MapPin, Code2, Database, BrainCircuit, 
   ShieldCheck, Briefcase, GraduationCap, Award, 
   ExternalLink, ArrowRight, Server, Terminal, Globe,
-  MessageCircle, X
+  MessageCircle, X, Monitor
 } from 'lucide-react';
 
 // --- DATA ---
 const skillsData = {
   "AI & ML": ["RAG pipelines", "Document ingestion & chunking", "Embeddings", "Vector similarity search", "LLM prompting", "Tool/function calling", "Conversational memory"],
-  "Languages & Frameworks": ["Java 21", "Spring Boot", "Spring AI", "Python", "JavaScript/TypeScript", "React", "Node.js", "REST APIs"],
-  "Data & AI Tooling": ["ChromaDB", "pgvector", "PostgreSQL", "MongoDB", "SQL", "Pandas", "TensorFlow", "MLflow"],
-  "Engineering & Delivery": ["Git/GitHub", "Maven", "Docker/Compose", "CI/CD", "FastAPI", "Streamlit", "LangGraph", "Linux"],
-  "Security & Infrastructure": ["OAuth2", "RBAC", "OWASP", "TLS", "VLANs", "TCP/IP", "Wireshark", "Nmap"]
+  "Languages & Frameworks": ["Java 21", "Spring Boot", "Spring AI", "Python", "JavaScript/TypeScript", "React", "Next.js", "Node.js", "C#", "Kotlin", "Dart", "Flutter", "ASP.NET Core", "REST APIs"],
+  "Data & AI Tooling": ["ChromaDB", "pgvector", "PostgreSQL", "SQL Server", "MongoDB", "SQL", "Pandas", "TensorFlow", "MLflow", "Power BI"],
+  "Engineering & Delivery": ["Git/GitHub", "Maven", "Docker/Compose", "Kubernetes", "CI/CD", "Azure", "FastAPI", "Streamlit", "LangGraph", "Linux"],
+  "Security & Infrastructure": ["OAuth2", "RBAC", "OWASP", "NIST", "TLS", "VPNs", "pfSense", "VLANs", "TCP/IP", "Wireshark", "Nmap"],
+  "IT Operations & Enterprise": ["Help desk", "User support", "Software installation", "Account administration", "Server health monitoring", "Backups", "OPERA PMS", "MC", "MICROS/POS", "Onity", "SunSystems", "Z-Fiscal", "PBX", "Conference AV"]
 };
 
 const projectsData = [
@@ -69,9 +70,12 @@ const experienceData = [
     company: "Kwetu Nairobi, Curio Collection by Hilton",
     type: "Industrial Attachment",
     points: [
-      "Supported user troubleshooting and technology services in a hotel IT environment.",
-      "Assisted with OPERA and MC installation, user administration, and exposure to MICROS/POS and Onity.",
-      "Supported server health checks, backups, PBX telephones, and conference AV systems."
+      "Provided IT support and troubleshooting assistance for users and technology services in a hospitality environment.",
+      "Supported OPERA and MC application installation and user account/password administration.",
+      "Gained practical exposure to MICROS/POS, Onity access-control systems, SunSystems and Z-Fiscal in hotel operations.",
+      "Supported server health checks, backups, application availability and basic administration procedures.",
+      "Assisted with POS/PMS environments, PBX telephone systems, digital signage, meeting/conference audiovisual systems and keycard support.",
+      "Built practical awareness of network segmentation, authentication, user privileges and secure enterprise application use."
     ]
   },
   {
@@ -80,8 +84,11 @@ const experienceData = [
     type: "June 2024 - December 2024",
     points: [
       "Developed REST APIs using Node.js and Azure SQL for a logistics platform.",
-      "Implemented OAuth2 authentication and role-based access control.",
-      "Built Python ETL pipelines and deployed containerized applications using Docker."
+      "Implemented OAuth2 authentication and role-based access control for data separation.",
+      "Worked on network security practices, firewall rules, VLAN segmentation and TLS configuration.",
+      "Built Python ETL pipelines and supported data ingestion for analytics and anomaly-detection workflows.",
+      "Applied threat-modelling concepts and addressed web security issues using OWASP guidance.",
+      "Deployed containerized applications using Docker and Azure services."
     ]
   },
   {
@@ -90,7 +97,8 @@ const experienceData = [
     type: "January 2024 - Present",
     points: [
       "Developed web and cross-platform mobile applications for small-business use cases.",
-      "Worked with APIs, databases, authentication, cloud deployment, and interactive dashboards."
+      "Worked with cloud deployments, APIs, databases, authentication and interactive dashboards.",
+      "Integrated payment services and real-time application features while applying secure development practices."
     ]
   }
 ];
@@ -130,10 +138,10 @@ export default function App() {
               Hey, I'm <span className="text-blue-600">David Momanyi</span>
             </h1>
             <h2 className="text-2xl text-gray-600 font-medium">
-              I build AI-enabled applications & scalable backend systems.
+              I build secure, scalable applications & provide enterprise IT solutions.
             </h2>
             <p className="text-lg text-gray-500 leading-relaxed max-w-lg">
-              Computer Science graduate with hands-on experience in Retrieval-Augmented Generation (RAG), vector search, LLM tool calling, Java/Spring AI, and Python-based AI pipelines.
+              Computer Science professional with practical experience in enterprise IT support, hospitality information systems, networking, server infrastructure, cybersecurity, software development, and cloud technologies. I bring a security-minded, service-oriented approach to system reliability and AI-driven application development.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="#projects" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg shadow-blue-200">
@@ -162,13 +170,14 @@ export default function App() {
               </div>
               <pre className="text-sm text-green-400 font-mono">
                 <code>
-{`class AIEngineer {
+{`class ITProfessional {
   constructor() {
     this.name = "David";
-    this.skills = ["RAG", "Spring AI"];
+    this.skills = ["Enterprise IT", "RAG", "Spring AI"];
+    this.mindset = "Security-First";
   }
 
-  buildSystem() {
+  solveProblem() {
     return "Scalable & Secure";
   }
 }`}
@@ -189,8 +198,8 @@ export default function App() {
       <section id="skills" className="py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Technical Skills</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">A comprehensive toolkit for building modern, intelligent, and secure applications.</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Technical & Domain Skills</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">A comprehensive toolkit bridging modern AI software engineering with enterprise infrastructure and hospitality systems.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(skillsData).map(([category, skills]) => (
@@ -262,7 +271,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Professional Experience</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">Where I've applied my skills in real-world environments.</p>
+            <p className="text-gray-500 max-w-2xl mx-auto">Where I've applied my skills across IT infrastructure, security, and software engineering.</p>
           </div>
           <div className="space-y-8">
             {experienceData.map((exp, idx) => (
@@ -290,9 +299,11 @@ export default function App() {
         </div>
       </section>
 
-      {/* EDUCATION & CERTIFICATIONS */}
+      {/* EDUCATION, CERTIFICATIONS & REFEREES */}
       <section className="py-24 px-6 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          
+          {/* Left Column: Education */}
           <div>
             <div className="flex items-center gap-3 mb-10">
               <GraduationCap className="text-blue-600" size={28} />
@@ -307,31 +318,55 @@ export default function App() {
               </div>
               <div className="border-l-4 border-gray-300 pl-6">
                 <h3 className="text-lg font-bold text-gray-900">Kenya Certificate of Secondary Education</h3>
-                <p className="text-gray-600 font-medium">St. Charles Lwanga National Secondary High School</p>
+                <p className="text-gray-600 font-medium">St. Charles Lwanga National Secondary High School, Kitui</p>
                 <p className="text-sm text-gray-500 mt-1">2017 - 2021</p>
+              </div>
+              <div className="border-l-4 border-gray-300 pl-6">
+                <h3 className="text-lg font-bold text-gray-900">Kenya Certificate of Primary Education</h3>
+                <p className="text-gray-600 font-medium">Enzai Primary School</p>
+                <p className="text-sm text-gray-500 mt-1">2011 - 2017</p>
               </div>
             </div>
           </div>
           
-          <div>
-            <div className="flex items-center gap-3 mb-10">
-              <Award className="text-blue-600" size={28} />
-              <h2 className="text-3xl font-bold text-gray-900">Certifications</h2>
+          {/* Right Column: Certifications & Referees */}
+          <div className="space-y-12">
+            <div>
+              <div className="flex items-center gap-3 mb-10">
+                <Award className="text-blue-600" size={28} />
+                <h2 className="text-3xl font-bold text-gray-900">Certifications</h2>
+              </div>
+              <div className="space-y-4">
+                {[
+                  "Microsoft Certified: Azure Solutions Architect Expert",
+                  "Microsoft Certified: DevOps Engineer Expert",
+                  "CompTIA Security+",
+                  "Cisco CCNA — In Progress"
+                ].map((cert, idx) => (
+                  <div key={idx} className="flex items-center gap-4 bg-gray-50 p-5 rounded-xl border border-gray-100">
+                    <ShieldCheck className="text-blue-600 shrink-0" size={22} />
+                    <span className="text-gray-700 font-medium">{cert}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="space-y-4">
-              {[
-                "Microsoft Certified: Azure Solutions Architect Expert",
-                "Microsoft Certified: DevOps Engineer Expert",
-                "CompTIA Security+",
-                "Cisco CCNA — In Progress"
-              ].map((cert, idx) => (
-                <div key={idx} className="flex items-center gap-4 bg-gray-50 p-5 rounded-xl border border-gray-100">
-                  <ShieldCheck className="text-blue-600 shrink-0" size={22} />
-                  <span className="text-gray-700 font-medium">{cert}</span>
+
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <Briefcase className="text-blue-600" size={28} />
+                <h2 className="text-3xl font-bold text-gray-900">Referee</h2>
+              </div>
+              <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900">Crawford Ndegwa</h3>
+                <p className="text-gray-600 font-medium">IT Manager, Kwetu Nairobi, Curio Collection by Hilton</p>
+                <div className="mt-4 space-y-2 text-sm text-gray-500">
+                  <p className="flex items-center gap-2"><Mail size={16} /> crawford.ndeqwa@hilton.com</p>
+                  <p className="flex items-center gap-2"><Phone size={16} /> +254 718 689360</p>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -375,7 +410,7 @@ export default function App() {
           </button>
           <div className="flex flex-col space-y-3">
             <h4 className="font-bold text-gray-900">Need help? Chat with us!</h4>
-            <p className="text-sm text-gray-500">We're online and ready to help you with your projects.</p>
+            <p className="text-sm text-gray-500">I'm online and ready to help you with your projects.</p>
             <a 
               href={waLink}
               target="_blank"
