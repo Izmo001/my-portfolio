@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Mail, Phone, MapPin, Code2, Database, BrainCircuit, 
   ShieldCheck, Briefcase, GraduationCap, Award, 
-  ExternalLink, ArrowRight, Server, Terminal
+  ExternalLink, ArrowRight, Server, Terminal, Globe,
+  MessageCircle, X
 } from 'lucide-react';
 
 // --- DATA ---
@@ -25,7 +26,10 @@ const projectsData = [
       "Specified an evaluation approach using RAGAS metrics to compare system versions rather than relying on subjective impressions.",
       "Planned production layers including FastAPI, Streamlit, Langfuse tracing, Docker Compose, and GitHub Actions CI/CD."
     ],
-    color: "bg-blue-600 text-white"
+    color: "bg-blue-600 text-white",
+    link: "https://github.com/Izmo001",
+    linkLabel: "View on GitHub",
+    icon: "server"
   },
   {
     title: "Commerce Copilot",
@@ -37,7 +41,25 @@ const projectsData = [
       "Implemented typed product-search tool calling using Spring AI @Tool methods, limiting the model to exposed functions.",
       "Added conversational continuity using MessageChatMemoryAdvisor and a conversation ID."
     ],
-    color: "bg-gray-50 text-gray-900"
+    color: "bg-gray-50 text-gray-900",
+    link: "https://github.com/Izmo001",
+    linkLabel: "View on GitHub",
+    icon: "server"
+  },
+  {
+    title: "GoTech",
+    tech: "Full-Stack Web · Live in Production",
+    status: "Live · gotech.co.ke",
+    description: "A production web platform deployed at gotech.co.ke — designed, built, and shipped end-to-end from backend APIs to the customer-facing frontend.",
+    highlights: [
+      "Designed and shipped a publicly accessible web application on a live domain.",
+      "Built responsive UI, API integration, and database-backed features.",
+      "Owned deployment, hosting, and ongoing maintenance for the production site."
+    ],
+    color: "bg-gray-900 text-white",
+    link: "https://gotech.co.ke",
+    linkLabel: "View Live",
+    icon: "globe"
   }
 ];
 
@@ -74,8 +96,15 @@ const experienceData = [
 ];
 
 export default function App() {
+  const [isWaOpen, setIsWaOpen] = useState(false);
+
+  // WhatsApp Configuration
+  const phoneNumber = "254704932291"; // 0704932291 converted to international format
+  const defaultMessage = "Hey David, I would like to know more info about your projects.";
+  const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
+
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-white text-gray-800 font-sans selection:bg-blue-600 selection:text-white relative">
       
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 z-50">
@@ -183,8 +212,8 @@ export default function App() {
       {/* PROJECTS SECTION */}
       <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Selected AI/ML Projects</h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">Practical applications of AI, machine learning, and software engineering.</p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Selected Projects</h2>
+          <p className="text-gray-500 max-w-2xl mx-auto">AI/ML systems and full-stack applications — from prototype to production.</p>
         </div>
         
         <div className="space-y-16">
@@ -204,13 +233,22 @@ export default function App() {
                     </li>
                   ))}
                 </ul>
-                <a href="#" className="inline-flex items-center gap-2 font-semibold hover:opacity-80 transition-opacity">
-                  View Project <ExternalLink size={18} />
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="inline-flex items-center gap-2 font-semibold hover:opacity-80 transition-opacity"
+                >
+                  {project.linkLabel} <ExternalLink size={18} />
                 </a>
               </div>
               <div className="md:w-2/5 p-10 flex items-center justify-center bg-black/5">
                 <div className="text-center">
-                  <Server size={64} className="mx-auto mb-4 opacity-50" />
+                  {project.icon === "globe" ? (
+                    <Globe size={64} className="mx-auto mb-4 opacity-50" />
+                  ) : (
+                    <Server size={64} className="mx-auto mb-4 opacity-50" />
+                  )}
                   <p className="text-sm font-medium opacity-60">Status: {project.status}</p>
                 </div>
               </div>
@@ -319,6 +357,47 @@ export default function App() {
           <p className="text-sm text-gray-500">© {new Date().getFullYear()} David Momanyi Isaya. Built with React & Tailwind CSS.</p>
         </div>
       </footer>
+
+      {/* --- WHATSAPP FLOATING WIDGET --- */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        
+        {/* The Popup Chat Card */}
+        <div 
+          className={`mb-4 bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 w-72 transition-all duration-300 origin-bottom-right ${
+            isWaOpen ? 'scale-100 opacity-100 translate-y-0' : 'scale-0 opacity-0 translate-y-10 pointer-events-none'
+          }`}
+        >
+          <button 
+            onClick={() => setIsWaOpen(false)}
+            className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+          >
+            <X size={16} />
+          </button>
+          <div className="flex flex-col space-y-3">
+            <h4 className="font-bold text-gray-900">Need help? Chat with us!</h4>
+            <p className="text-sm text-gray-500">We're online and ready to help you with your projects.</p>
+            <a 
+              href={waLink}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white py-2.5 rounded-lg font-medium transition-colors mt-2"
+            >
+              <MessageCircle size={18} />
+              Start Chat
+            </a>
+          </div>
+        </div>
+
+        {/* The Floating Button */}
+        <button
+          onClick={() => setIsWaOpen(!isWaOpen)}
+          className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center"
+          aria-label="Chat on WhatsApp"
+        >
+          <MessageCircle size={28} />
+        </button>
+      </div>
+
     </div>
   );
 }
